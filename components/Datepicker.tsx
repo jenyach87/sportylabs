@@ -15,6 +15,7 @@ const DateTimePicker = () => {
   const [selectedStartDate, setSelectedStartDate] = useState<string>();
   const [selectedEndDate, setSelectedEndDate] = useState<string>();
   const [error, setError] = useState<boolean>(false);
+  const [confirmedSlot, setConfirmedSlot] = useState<string | null>(null);
 
   const handleGetDate = useCallback((e: any, type: string) => {
     switch (type) {
@@ -46,6 +47,10 @@ const DateTimePicker = () => {
       return;
     }
     setError(false);
+
+    const result = `${selectedStartDate} - ${selectedEndDate} | ${startTime} — ${endTime}`;
+
+    setConfirmedSlot(result);
   };
 
   return (
@@ -74,11 +79,7 @@ const DateTimePicker = () => {
       <Button className="max-w-36" color="primary" onPress={selectedTimeSlots}>
         Apply slots
       </Button>
-      {!error && (
-        <p>
-          {selectedStartDate} — {selectedEndDate} | {startTime} — {endTime}
-        </p>
-      )}
+      {confirmedSlot && <p className="text-cyan-600 text-xl">{confirmedSlot}</p>}
     </div>
   );
 };
