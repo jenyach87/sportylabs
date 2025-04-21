@@ -29,13 +29,11 @@ const TimePicker: FC<ITimePickerProps> = ({ label, onChange, type }: any) => {
   );
 
   return (
-    <div className="flex flex-col items-start gap-1 w-full min-w-[284px] ] bg-slate-200 rounded-xl px-2 h-14">
-      <label className="text-xs font-medium text-sky-500" style={{ color: '#52525b' }}>
-        {label}
-      </label>
+    <div className="flex flex-col items-start gap-1 w-full min-w-[284px] bg-white text-[#52525B] text-sm rounded-xl px-2 pt-1 h-14">
+      <label className="text-xs font-medium">{label}</label>
       <div className="flex gap-2">
         <select
-          className="flex rounded p-1 bg-slate-200 text-sky-500"
+          className="flex rounded p-1"
           value={hour}
           onChange={(e) => handleChange('hour', e.target.value)}
         >
@@ -47,7 +45,7 @@ const TimePicker: FC<ITimePickerProps> = ({ label, onChange, type }: any) => {
         </select>
         <span className="text-xl">:</span>
         <select
-          className=" rounded p-1 fs bg-slate-200 text-sky-500"
+          className=" rounded p-1 fs"
           value={minute}
           onChange={(e) => handleChange('minute', e.target.value)}
         >
