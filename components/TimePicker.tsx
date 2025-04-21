@@ -29,7 +29,7 @@ const TimePicker: FC<ITimePickerProps> = ({ label, onChange, type }: any) => {
   );
 
   return (
-    <div className="flex flex-col items-start gap-1 w-full min-w-[284px] rounded-xl px-2 h-14">
+    <div className="flex flex-col items-start gap-1 w-full min-w-[284px] bg-black rounded-xl px-2 h-14">
       <label className="text-xs font-medium " style={{ color: '#52525b' }}>
         {label}
       </label>
