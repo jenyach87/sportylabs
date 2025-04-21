@@ -53,13 +53,13 @@ const DateTimePicker = () => {
       <div className="flex flex-col justify-center items-center lg:flex-row flex-wrap gap-6">
         <div className="flex flex-col sm:flex-row gap-4">
           <DatePicker
-            className="w-full min-w-[284px]"
+            className="w-full min-w-[284px] bg-slate-200 text-sky-500"
             label="Start date"
             maxValue={endDate || null}
             onChange={(e) => handleGetDate(e, 'startdate')}
           />
           <DatePicker
-            className="w-full min-w-[284px]"
+            className="w-full min-w-[284px] bg-slate-200 text-sky-500"
             label="End date"
             minValue={startDate || null}
             onChange={(e) => handleGetDate(e, 'enddate')}
